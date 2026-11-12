@@ -1,0 +1,209 @@
+name: ECOM_SEMANTIC
+tables:
+  - name: AMAZON
+    description: The table contains records of unspecified purpose.
+    base_table:
+      database: ECOMMERCE
+      schema: ECOM
+      table: AMAZON
+    dimensions:
+      - name: C1
+        description: Amazon Standard Identification Numbers (ASINs) used to uniquely identify products in the Amazon catalog.
+        expr: C1
+        data_type: VARCHAR
+        sample_values:
+          - B09C635BMM
+          - B08XMSKKMM
+          - B006LW0WDQ
+      - name: C10
+        description: Unique identifier associated with an Amazon entity or record.
+        expr: C10
+        data_type: VARCHAR
+        sample_values:
+          - AHKTEC7ZVRWNAA66KB3V5REUQG6A,AFMYMI6FWPFSDK7KXBHB2D7555OA,AEZTUFS2XNNKJ5ZCNRLE5JWWI4PQ,AGVZ57S4TZDMQTXR67SMTWQOOKRA,AEJWYKZND5DTQQYR26RKWY5FWTOQ,AGBUVENL47YJ3NJFQJS2MKZC7NKA,AFI3EFAYZRL5L5TQXRQBQKWJQJTQ,AEQWP6WIVLFP2L3MSAWW3RENW3XQ
+          - AHXJZSVEOLZI5RBMJNOHPVSA2DNA,AGM3M7VSW4O2MBOMCFV7EQAY5ZLA,AFLTI23AJOP4G45H4KOUBGB64JZQ,AH2GTLVFFJBTLSGZ2CBTOK7C4NAQ,AFJ5KPIQGTPRDIYT4PGZCUN63SHQ,AGFGCIGENNJTFHE6ROZW3R43AI7A,AELDTBTLLQ2OITCG4BQTQWCJ2Z2A,AEBAKTSBJSTQP4QYDTXHO7LZDWTA
+          - AG3D6O4STAQKAY2UVGEUV46KN35Q,AHMY5CWJMMK5BJRBBSNLYT3ONILA,AHCTC6ULH4XB6YHDY6PCH2R772LQ,AGYHHIERNXKA6P5T7CZLXKVPT7IQ,AG4OGOFWXJZTQ2HKYIOCOY3KXF2Q,AENGU523SXMOS7JPDTW52PNNVWGQ,AEQJHCVTNINBS4FKTBGQRQTGTE5Q,AFC3FFC5PKFF5PMA52S3VCHOZ5FQ
+      - name: C11
+        description: A list of customer or reviewer names associated with a transaction or product.
+        expr: C11
+        data_type: VARCHAR
+        sample_values:
+          - Manav,Adarsh gupta,Sundeep,S.Sayeed Ahmed,jaspreet singh,Khaja moin,Anand,S.ARUMUGAM
+          - SyedShoaib Afnan,Deepak Gogia,stuartb4u,Ramanasai Rupanagudi Venkata,ABC Thiruvananthapuram,Aneesh Suresh,SunDeeP ChebrolU,harsh shah
+          - Ranjeet Singh,Placeholder,Niranjan V Jayaram,Amazon Customer,Amazon Customer,Sudhanshu Shekhar Tripathy,Ac3Connor,Neeraj K.
+      - name: C12
+        description: A comma-separated list of Amazon review identifiers associated with a record.
+        expr: C12
+        data_type: VARCHAR
+        sample_values:
+          - review_id
+          - R1EBS3566VCSCG,R24MB66WRPSN2A,R25UU2M1B9BO5X,R1NXW7PGVND2LE,R3OSBPH7X9AQUK,R2I8RVEPDM0IMQ,R5RES2LABIW7Q,R3A3IRV8ZWP1U9
+          - R3HXWT0LRP0NMF,R2AJM3LFTLZHFO,R6AQJGUP6P86,R1KD19VHEDV0OR,R3C02RMYQMK6FC,R39GQRVBUZBWGY,R2K9EDOE15QIRJ,R3OI7YT648TL8I
+      - name: C13
+        description: Customer reviews and feedback submitted for products.
+        expr: C13
+        data_type: VARCHAR
+        sample_values:
+          - review_title
+          - Satisfied,Charging is really fast,Value for money,Product review,Good quality,Good product,Good Product,As of now seems good
+          - You can trust on this one,The best usb cable,Wel build just like original .,Nice!!,Working perfectly,Basic,Good,No issues
+      - name: C14
+        description: Customer reviews and feedback text submitted for purchased products.
+        expr: C14
+        data_type: VARCHAR
+        sample_values:
+          - Best quality,The product looks original-like and is perfectly working with my OnePlus 8T. Good Type-C to C buy, recommended over other companies.,its a very good product and yet a reliable and durable cable to get yourself connected,Cable is good and support 65 w fast charging. I am use this cable to my one plus 8t mobile phone. This cable also speed in transfer to data. Cable price is also low. Thanks for seller to provide best quality and durability cable in low price. I am happy for saying this cable is all-rounder.,The product worked  fine for me. Got this at good price,Flexible and toughness is best workAnd also in samsung m31s mobile fast charging,I bought this cable for my nothing phone 1 it's amazing, fast charging is working very well I've tried this also my samsung mobile, and result was fabulous, thanks,Initial impressions are good. It is supporting ulatra fast charging on my OnePlus 9 pro.
+          - Working fine,very good this data cable,Performance of this product is good enough.,Have been using it since quite a well. It is doing an excellent job. You can also avail the warranty by just messaging the serial number on whatsapp. Super happy with the overall performance.,Good data cable same as shown in pic. I brought this for my Nikon d5600 photos transfer to system.,Superb product...👌👌👌,Better,Seems to fast charge at 2A , not tried anything higher, but its a very sturdy cable should last for a long time
+          - TV remote is the replica of the original one supplied with TV. The original one served for about one and half year. The remote came without any battery. Performance since last few days is satisfactory. But Amazon has similar remote with lessor price. But can't asses the quality. Alternatively one can operate by downloading the remote from play store in android. But may be little inconvinience to operate.,Working fine but the quality of outer case is low quality. Can be purchase.,The pairing of this remote was little tough and also some times remote is not working after I use the voice Recognition. The buttons are hard to press when compare to the original remote which came with the smart box. So, find a original piece and go for it,Remote is faulty . It looses it's connectivity with the tv atleast 50 times in a day. So I have to pair it 50 times.I want a replacement. Please arrange a call back from the customer service team,,Value for money, sturdy quality, need voice recognition improvement,Must add a note that you must switch on TV manually and then pair,working is good, no issuebut material quality is not up to mark
+      - name: C15
+        description: URLs linking to product images hosted on Amazon's media servers.
+        expr: C15
+        data_type: VARCHAR
+        sample_values:
+          - https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/31zOsqQOAOL._SY445_SX342_QL70_FMwebp_.jpg
+          - https://m.media-amazon.com/images/W/WEBP_402378-T2/images/I/4177nw8okbL._SX300_SY300_QL70_FMwebp_.jpg
+          - https://m.media-amazon.com/images/I/310WOJIrwjL._SX300_SY300_QL70_FMwebp_.jpg
+      - name: C16
+        description: The uniform resource locator (URL) linking to a product listing on Amazon.
+        expr: C16
+        data_type: VARCHAR
+        sample_values:
+          - https://www.amazon.in/boAt-LTG-550v3-Lightning-Resistance/dp/B09JSW16QD/ref=sr_1_240?qid=1672909135&s=electronics&sr=1-240
+          - product_link
+          - https://www.amazon.in/ZEBRONICS-ZEB-USB150WF1-Supports-encryption-Standards/dp/B093QCY6YJ/ref=sr_1_104?qid=1672909129&s=electronics&sr=1-104
+      - name: C2
+        description: The name or title of a product listed for sale.
+        expr: C2
+        data_type: VARCHAR
+        sample_values:
+          - Model-P4 6 Way Swivel Tilt Wall Mount 32-55-inch Full Motion Cantilever for LED,LCD and Plasma TV's
+          - Wayona Nylon Braided USB to Lightning Fast Charging and Data Sync Cable Compatible for iPhone 13, 12,11, X, 8, 7, 6, 5, iPad Air, Pro, Mini (3 FT Pack of 1, Grey)
+          - MI 100 cm (40 inches) 5A Series Full HD Smart Android LED TV with 24W Dolby Audio & Metal Bezel-Less Frame (Black) (2022 Model)
+      - name: C3
+        description: The hierarchical category path of a product, representing its classification from broad category down to specific subcategory.
+        expr: C3
+        data_type: VARCHAR
+        sample_values:
+          - category
+          - Computers&Accessories|NetworkingDevices|NetworkAdapters|WirelessUSBAdapters
+          - Computers&Accessories|Accessories&Peripherals|Cables&Accessories|Cables|USBCables
+      - name: C4
+        description: The price of a product in Indian Rupees.
+        expr: C4
+        data_type: VARCHAR
+        sample_values:
+          - discounted_price
+          - ₹199
+          - ₹399
+      - name: C5
+        description: The price of a product in Indian Rupees.
+        expr: C5
+        data_type: VARCHAR
+        sample_values:
+          - ₹499
+          - ₹65,000
+          - ₹1,099
+      - name: C6
+        description: The discount percentage applied to a product listing.
+        expr: C6
+        data_type: VARCHAR
+        sample_values:
+          - discount_percentage
+          - 64%
+          - 82%
+      - name: C7
+        description: Numerical rating score associated with a product or item.
+        expr: C7
+        data_type: VARCHAR
+        sample_values:
+          - '4.0'
+          - '4.6'
+          - '4.2'
+      - name: C8
+        description: The number of ratings received by a product on Amazon.
+        expr: C8
+        data_type: VARCHAR
+        sample_values:
+          - 43,994
+          - 6,659
+          - '612'
+      - name: C9
+        description: Detailed product feature descriptions and specifications for items listed on the platform.
+        expr: C9
+        data_type: VARCHAR
+        sample_values:
+          - '1M Long Cable. Usb 2.0 (Type A)|Toughened Joints|Strong And Sturdy|Country Of Origin: China|6 Months Warranty'
+          - Up To 10,000+ Bend And 10,000+ Plugging And Unplugging Test Ensure This Cable A Longer Lifespan|Ensure Fast And Stable Data Transmission Up To 5 Gbps|Compatible Designed To Work Flawlessly With All Usb-C Devices|2 Years Warranty|1.2M Tangle Free Durable Tough Braiding Sync & Charge Cable
+          - Connect Usb Type-C Enabled Devices (Macbook, Chromebook Pixel, Galaxy Note 7 Etc.) With Standard Usb Type-C 2.0 Enabled Devices And Accessories (Smartphones, Car/Wall Charger, Multi-Port Adapters Etc.)|Up To 480 Mbps Data Transfer Speed; Power Output Up To 5V, 3 Amp|Type-C Port Is Half The Width And One-Third The Height Of A Standard Usb-A Connector (Slightly Larger Compared To Lightning Or Micro-Usb Ports)|Certified By Usb-If To Be Compliant With Usb 2.0; 1 Year Limited Warranty|Ideal For Charging And Powering Usb Type-C Enabled Devices, As Well As Syncing Data, Photos And Music|Reversible Design - Easily Insert The Connector Into Any Type-C Enabled Device (Does Not Matter Which Side Is Up)
+  - name: FLIPKART
+    description: The table contains records of electronic devices listed on an e-commerce platform. Each record represents a single product and includes details about the device's specifications such as brand, model, color, memory, and storage, as well as pricing and customer ratings.
+    base_table:
+      database: ECOMMERCE
+      schema: ECOM
+      table: FLIPKART
+    dimensions:
+      - name: BRAND
+        description: The brand name of the product listed on the platform.
+        expr: BRAND
+        data_type: VARCHAR
+        sample_values:
+          - IQOO
+          - OPPO
+          - Google Pixel
+      - name: COLOR
+        description: The color of the product.
+        expr: COLOR
+        data_type: VARCHAR
+        sample_values:
+          - Auroral Blue
+          - Aurora Blue
+          - Electric Black
+      - name: MEMORY
+        description: The memory capacity of a product expressed in units such as megabytes or gigabytes.
+        expr: MEMORY
+        data_type: VARCHAR
+        sample_values:
+          - 6 GB
+          - 3 GB
+          - 4 GB
+      - name: MODEL
+        description: The model name of a mobile device listed on the platform.
+        expr: MODEL
+        data_type: VARCHAR
+        sample_values:
+          - A53s 5G
+          - A15S
+          - A53
+      - name: ORIGINAL_PRICE
+        description: The original listed price of a product before any discounts or promotions are applied.
+        expr: ORIGINAL_PRICE
+        data_type: NUMBER
+        sample_values:
+          - '7007'
+          - '6295'
+          - '17194'
+      - name: SELLING_PRICE
+        description: The selling price of a product listed on the platform.
+        expr: SELLING_PRICE
+        data_type: NUMBER
+        sample_values:
+          - '13990'
+          - '9490'
+          - '57999'
+      - name: STORAGE
+        description: The storage capacity of a product expressed in standard units of digital measurement.
+        expr: STORAGE
+        data_type: VARCHAR
+        sample_values:
+          - 128 GB
+          - 64 GB
+          - 32 GB
+    facts:
+      - name: RATING
+        description: The numerical rating assigned to a product on a scale reflecting customer satisfaction.
+        expr: RATING
+        data_type: NUMBER
+        sample_values:
+          - '4.5'
+          - '4.3'
+          - '4.4'
