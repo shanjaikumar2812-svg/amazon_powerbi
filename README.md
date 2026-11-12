@@ -1,14 +1,14 @@
-# 🛒 Amazon Product Pricing & Ratings Dashboard (Power BI)
+#  Amazon Product Pricing & Ratings Dashboard (Power BI)
 
 An interactive Power BI dashboard that explores one question: **do bigger discounts mean better- or worse-rated products on Amazon?**
 
 ![Dashboard Overview](images/overview.png)
 
-## 📌 Problem Statement
+##  Problem Statement
 
 Online shoppers see huge discounts everywhere, but is a discount a sign of a good deal or a weak product? This project analyses Amazon product listings (price, discount, rating, review count) to find which categories, price bands and discount levels offer the best value.
 
-## 📊 Key Metrics (KPI Cards)
+##  Key Metrics (KPI Cards)
 
 | Metric | What it shows |
 |---|---|
@@ -19,7 +19,7 @@ Online shoppers see huge discounts everywhere, but is a discount a sign of a goo
 | **Avg Savings (INR)** | Average of actual price minus discounted price |
 | **HRHD % of Catalog** | Share of products flagged High Rating + High Discount (genuine good deals) |
 
-## 🔍 Key Insights
+##  Key Insights
 
 > Replace these with your real numbers from the dashboard.
 
@@ -28,7 +28,7 @@ Online shoppers see huge discounts everywhere, but is a discount a sign of a goo
 - **[XX%]** of the catalog is flagged **HRHD** (High Rating, High Discount).
 - **[Price band]** has the best balance of rating and discount.
 
-## 🧰 Features
+##  Features
 
 - Slicers for **Main Category, Price Band, Discount Band and Rating Band**
 - Combo chart: Total Products vs Avg Discount % by price band
@@ -45,7 +45,7 @@ Online shoppers see huge discounts everywhere, but is a discount a sign of a goo
 - **DAX**: custom measures (Weighted Avg Rating, Avg Savings, HRHD %)
 - Data modelling, band segmentation, dashboard design
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 ├── DSE_assignment_vivid.pbix   # Power BI project file
@@ -56,20 +56,20 @@ Online shoppers see huge discounts everywhere, but is a discount a sign of a goo
 └── data/                       # (optional) source dataset / link
 ```
 
-## ▶️ How to Open
+##  How to Open
 
 1. Install [Power BI Desktop](https://powerbi.microsoft.com/desktop/) (free, Windows only).
 2. Download or clone this repo.
 3. Open `DSE_assignment_vivid.pbix`.
 4. If prompted, refresh the data or point the data source to the file in `data/`.
 
-## 📂 Dataset
+##  Dataset
 
 Amazon products dataset with: `product_name`, `main_category`, `sub_category`, `actual_price`, `discounted_price`, `discount_percentage`, `rating`, `rating_count`.
 Source: *[https://www.kaggle.com/datasets/shanjaikumar111/amazon-sales]*
 
 
-## 👤 Author
+##  Author
 
 **[Your Name]**
 [LinkedIn](https://linkedin.com/in/linkedin.com/in/shanjai-kumar-380933315) · [Email](mailto:shanjaikumarshanjaikumar@gmail.com)
